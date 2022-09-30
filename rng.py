@@ -7,7 +7,7 @@ langas = tk.Tk()
 langas.geometry("100x150")
 langas.title("Random Number Generator")
 langas.resizable(width=False,height=False)
-langas.iconbitmap('C:\\Users\\jack-\\Desktop\\Paskaitu medziaga\\ikona2.ico')
+langas.iconbitmap('C:\\Users\\jack-\\Desktop\\Paskaitu medziaga\\favicon.ico')
 
 def gen_nr():
     sarasas = range(0,100)
