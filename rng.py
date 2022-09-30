@@ -1,29 +1,27 @@
-from tkinter import * 
+# POKER RANDOM NUMBER GENERATOR
+
+import tkinter as tk 
 import random
 
-#print("POKER RNG!")
+langas = tk.Tk()
+langas.geometry("100x150")
+langas.title("Random Number Generator")
+langas.resizable(width=False,height=False)
+langas.iconbitmap('C:\\Users\\jack-\\Desktop\\Paskaitu medziaga\\ikona2.ico')
 
-langas = Tk()
-langas.geometry("300x150")
+def gen_nr():
+    sarasas = range(0,100)
+    skaicius = ""
+    for skaicius in range(2):
+        skaicius = skaicius + random.choice(sarasas)
+    linija2.config(text = skaicius)
 
-def paspausti():
-    ivesta = generuoti.get()
-    rezultatas["text"] = ivesta
-    generuoti.delete(0, len(ivesta))
+#linija1 = tk.Label(text="RNG",font=("broadway",67),bg="Black",fg="White")
+mygtukas = tk.Button(text="<X>",font=("broadway",25),bg="black",fg="white",command=gen_nr)
+linija2 = tk.Label (font=("broadway",50),bg="white", fg="black",text="")
 
-
-pavadinimas = Label(langas, text="RANDOM NUMBER GENERATOR")
-skaicius = Label(langas, text="Skaicius")
-generuoti = Entry(langas)
-mygtukas = Button(langas, text="Generuoti", command=paspausti)
-langas.bind("<Return>", lambda event: paspausti())
-rezultatas = Label(langas, text="", bd=1, relief=SUNKEN, anchor=E)
-
-
-skaicius.grid(row=0, column=0)
-generuoti.grid(row=0, column=1)
-mygtukas.grid(row=2, column=1)
-rezultatas.grid(row=1, columnspan=3, sticky=W+E)
-
+#linija1.grid(row=0, column=0)
+mygtukas.grid(row=10, column=0)
+linija2.grid(row=20, column=0)
 
 langas.mainloop()
